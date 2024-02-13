@@ -12,10 +12,10 @@ class _WizardScreenState extends State<WizardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('마법사'),
+        title: const Text('뉴마법사'),
       ),
       body: const Center(
-        child: Text('마법사 화면'),
+        child: Text('뉴마법사 화면'),
       ),
     );
   }
