@@ -19,11 +19,11 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Expanded(
             child: SingleChildScrollView(
-              physics: AlwaysScrollableScrollPhysics(),
+              physics: const AlwaysScrollableScrollPhysics(),
               child: Column(
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Row(
                       children: <Widget>[
                         Expanded(
@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         onTap: () {
                                           context.push('/magician');
                                         },
-                                        child: Column(
+                                        child: const Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: <Widget>[
@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Row(
                       children: <Widget>[
                         Expanded(
@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         onTap: () {
                                           context.push('/dilemma');
                                         },
-                                        child: Column(
+                                        child: const Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: <Widget>[
@@ -85,11 +85,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Row(
                       children: <Widget>[
-                        Text("게시판"),
-                        Spacer(),
+                        const Text("게시판"),
+                        const Spacer(),
                         Material(
                             child: InkWell(
                                 onTap: () {
@@ -100,8 +100,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       borderRadius: BorderRadius.circular(15.0),
                                       color: Colors.blue.shade200,
                                     ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                    child: const Padding(
+                                      padding: EdgeInsets.all(8.0),
                                       child: Text("더보기"),
                                     )))),
                       ],
@@ -116,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Expanded(
                               child: Container(
                                 height: 100,
-                                color: Color.fromARGB(190, 35, 20, 235),
+                                color: const Color.fromARGB(190, 35, 20, 235),
                               ),
                             ),
                           ],
