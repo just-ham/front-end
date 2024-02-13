@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:just_ham/features/community/community_screen.dart';
 import 'package:just_ham/features/dilemma/dilemma_screen.dart';
 import 'package:just_ham/features/home/home_screen.dart';
-import 'package:just_ham/features/magician/magician_screen.dart';
+import 'package:just_ham/features/wizard/wizard_screen.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'root');
@@ -22,9 +22,9 @@ GoRouter appRouter = GoRouter(
           return const DilemmaScreen();
         }),
     GoRoute(
-        path: '/magician',
+        path: '/wizard',
         builder: (context, state) {
-          return const MagicianScreen();
+          return const WizardScreen();
         }),
     GoRoute(
         path: '/community',

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MagicianScreen extends StatefulWidget {
-  const MagicianScreen({super.key});
+class WizardScreen extends StatefulWidget {
+  const WizardScreen({super.key});
 
   @override
-  State<MagicianScreen> createState() => _MagicianScreenState();
+  State<WizardScreen> createState() => _WizardScreenState();
 }
 
-class _MagicianScreenState extends State<MagicianScreen> {
+class _WizardScreenState extends State<WizardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
