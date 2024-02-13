@@ -12,10 +12,10 @@ class _CommunityScreenState extends State<CommunityScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('커뮤니티'),
+        title: const Text('뉴커뮤니티'),
       ),
       body: const Center(
-        child: Text('커뮤니티 화면'),
+        child: Text('뉴커뮤니티 화면'),
       ),
     );
   }
