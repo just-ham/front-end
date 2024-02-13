@@ -12,10 +12,10 @@ class _DilemmaScreenState extends State<DilemmaScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('토론방'),
+        title: const Text('딜레마'),
       ),
       body: const Center(
-        child: Text('토론방 화면'),
+        child: Text('딜레마 화면'),
       ),
     );
   }
