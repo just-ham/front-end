@@ -128,6 +128,7 @@ class _DilemmaScreenState extends State<DilemmaScreen> {
                             sendAt: DateTime.now(),
                             type: 0,
                             senderUID: "senderUID"));
+                    _textController.clear();
                     setState(() {});
                   },
                   child: const Text('Submit'),
