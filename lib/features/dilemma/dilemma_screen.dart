@@ -119,13 +119,15 @@ class _DilemmaScreenState extends State<DilemmaScreen> {
                 padding: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
                   onPressed: () {
-                    _messages.add(Message(
-                        room: "",
-                        message: _textController.text,
-                        sender: "sender",
-                        sendAt: DateTime.now(),
-                        type: 0,
-                        senderUID: "senderUID"));
+                    _messages.insert(
+                        0,
+                        Message(
+                            room: "",
+                            message: _textController.text,
+                            sender: "sender",
+                            sendAt: DateTime.now(),
+                            type: 0,
+                            senderUID: "senderUID"));
                     setState(() {});
                   },
                   child: const Text('Submit'),
