@@ -50,6 +50,8 @@ dependencies:
   loading_animation_widget: ^1.2.0+4
   permission_handler: ^11.0.1
   webview_flutter: ^4.5.0
+  flutter_chat_bubble: ^2.0.2
+  easy_localization: ^3.0.4
 
 dev_dependencies:
   flutter_test:
