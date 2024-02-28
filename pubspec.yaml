@@ -50,6 +50,7 @@ dependencies:
   loading_animation_widget: ^1.2.0+4
   permission_handler: ^11.0.1
   webview_flutter: ^4.5.0
+  socket_io_client: ^2.0.3+1
 
 dev_dependencies:
   flutter_test:
