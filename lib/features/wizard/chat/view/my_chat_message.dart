@@ -22,8 +22,9 @@ class MyChatMsg extends StatelessWidget {
         child: FadeTransition(
           opacity: animation,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              const Expanded(child: SizedBox()),
+              const Spacer(),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
@@ -33,12 +34,9 @@ class MyChatMsg extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Row(
-                      children: [
-                        const SizedBox(width: 5),
-                        Text(content),
-                        const SizedBox(width: 5),
-                      ],
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                      child: Text(content),
                     ),
                   ),
                 ],

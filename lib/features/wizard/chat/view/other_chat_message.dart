@@ -28,25 +28,24 @@ class OtherChatMsg extends StatelessWidget {
                 backgroundColor: Colors.amber,
                 child: Text(userName[0]),
               ),
-              const SizedBox(width: 16,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(userName),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(5),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(userName),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                        child: Text(content),
+                      ),
                     ),
-                    child: Row(
-                      children: [
-                        const SizedBox(width: 5),
-                        Text(content),
-                        const SizedBox(width: 5),
-                      ],
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           ),
