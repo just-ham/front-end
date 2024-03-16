@@ -5,6 +5,7 @@ class Message {
   final DateTime sendAt;
   final int type;
   final String senderUID;
+  final bool isFirstSide;
 
   Message(
       {required this.room,
@@ -12,6 +13,7 @@ class Message {
       required this.sender,
       required this.sendAt,
       required this.type,
+      required this.isFirstSide,
       required this.senderUID});
 
   factory Message.fromJson(Map<String, dynamic> message) {
@@ -21,6 +23,7 @@ class Message {
       sender: message['sender'],
       type: message['type'],
       senderUID: message["_id"],
+      isFirstSide: message['isFirstSide'],
       sendAt: DateTime.fromMillisecondsSinceEpoch(message['sendAt']),
     );
   }

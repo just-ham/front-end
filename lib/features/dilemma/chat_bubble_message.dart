@@ -101,6 +101,8 @@ class ChatBubbleMessage extends StatefulWidget {
   final String userName;
   final Message message;
   final String? beforeUser;
+  final bool? isFirstSide;
+  final bool? isBeforeFirst;
   final DateTime? beforeTime;
   final List<XFile>? pickedImages;
   final String imageSrc;
@@ -110,6 +112,8 @@ class ChatBubbleMessage extends StatefulWidget {
       required this.userName,
       required this.message,
       required this.imageSrc,
+      this.isFirstSide,
+      this.isBeforeFirst,
       this.beforeUser,
       this.beforeTime,
       this.pickedImages});
@@ -122,7 +126,7 @@ class _ChatBubbleMessageState extends State<ChatBubbleMessage> {
   @override
   Widget build(BuildContext context) {
     //logger.d("beforeUser : ${widget.beforeUser}, beforeTime : ${widget.userName},userName : ${widget.message.sender}");
-    bool isSentByCurrentUser = widget.userName == widget.message.sender;
+    bool isSentByCurrentUser = !widget.isFirstSide!;
     if (widget.message.type == 2) {
       return Padding(
         padding: const EdgeInsets.only(top: 4),
@@ -188,7 +192,7 @@ class _ChatBubbleMessageState extends State<ChatBubbleMessage> {
             ],
           ),
         Padding(
-          padding: widget.userName == widget.beforeUser
+          padding: isSentByCurrentUser
               ? const EdgeInsets.only(top: 2)
               : const EdgeInsets.only(top: 8),
           child: Row(
@@ -197,41 +201,48 @@ class _ChatBubbleMessageState extends State<ChatBubbleMessage> {
                 : MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (!isSentByCurrentUser &&
-                  widget.message.sender != widget.beforeUser)
+              if (!isSentByCurrentUser)
                 GestureDetector(
                   onTap: () {
                     // logger.d("profileOther/${widget.message.sender}");
                     context.push("/profileOther/${widget.message.sender}");
                   },
                   child: CircleAvatar(
-                      radius: 15,
+                      radius: 25,
                       backgroundImage: ExtendedNetworkImageProvider(
                         "https://thumb.mt.co.kr/06/2023/11/2023111718453086374_1.jpg/dims/optimize/",
                         cache: true,
                       )),
                 ),
-              if (!isSentByCurrentUser &&
-                  widget.message.sender == widget.beforeUser)
-                const SizedBox(
-                  width: 32,
-                ),
               const SizedBox(
                 width: 6,
               ),
               Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: isSentByCurrentUser
+                    ? CrossAxisAlignment.end
+                    : CrossAxisAlignment.start,
                 children: [
-                  if (widget.message.sender != widget.beforeUser &&
-                      !isSentByCurrentUser)
-                    Text(
-                      "사용자1" ?? widget.message.sender,
-                    ),
+                  Text(
+                    "사용자1" ?? widget.message.sender,
+                  ),
                   _buildMessageBubble(context, isSentByCurrentUser,
                       widget.message, widget.postId),
                   const SizedBox(height: 3),
                 ],
               ),
+              if (isSentByCurrentUser)
+                GestureDetector(
+                  onTap: () {
+                    // logger.d("profileOther/${widget.message.sender}");
+                    context.push("/profileOther/${widget.message.sender}");
+                  },
+                  child: CircleAvatar(
+                      radius: 25,
+                      backgroundImage: ExtendedNetworkImageProvider(
+                        "https://thumb.mt.co.kr/06/2023/11/2023111718453086374_1.jpg/dims/optimize/",
+                        cache: true,
+                      )),
+                ),
             ],
           ),
         ),
